@@ -5,7 +5,7 @@
 Cache::config('default', array('engine' => 'File'));
 
 
-CakePlugin::load(array('DebugKit','Search','Chosen'));
+CakePlugin::load(array('DebugKit','Search'));
 
 Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
