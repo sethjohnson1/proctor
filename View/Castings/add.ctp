@@ -34,9 +34,9 @@
 		echo $this->Form->input('xrf');
 		echo $this->Form->input('patina');
 		echo $this->Form->input('Relatedimage.images',array('value'=>$relimg,'label'=>'Related Images'));
-		/* these three fields weren't on the most recent spec sheet
 		echo $this->Form->input('signatures');
 		echo $this->Form->input('copyright');
+	/* these three fields weren't on the most recent spec sheet
 		echo $this->Form->input('idnumbers');
 		*/
 		echo $this->Form->input('Exhibit');
