@@ -1,9 +1,18 @@
 <div class="artworks form">
-<?php echo $this->Form->create('Artwork'); ?>
+<?php echo $this->Form->create('Artwork'); 
+	if (isset($edit)){
+		$word='Edit';
+		echo $this->Form->input('id');
+	}
+	else{
+		$word='Add';
+	}
+?>
 	<fieldset>
-		<legend><?php echo __('Add Artwork'); ?></legend>
+		<legend><?php echo __($word.' Artwork'); ?></legend>
 	<?php
 		echo $this->Form->input('name');
+		echo $this->Form->input('alttitle',array('label'=>'Alternate Titles'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

@@ -57,6 +57,8 @@ class ArtworksController extends AppController {
 			$options = array('conditions' => array('Artwork.' . $this->Artwork->primaryKey => $id));
 			$this->request->data = $this->Artwork->find('first', $options);
 		}
+		$this->set('edit',1);
+		$this->render('add','default');
 	}
 
 /**

@@ -35,7 +35,7 @@ class CastingsController extends AppController {
 			unset($this->request->data['Relatedimage']['images']);
 			$this->Casting->create();
 			if ($this->Casting->saveAssociated($this->request->data)) {
-				$this->Session->setFlash(__('The casting has been saved. Yay Jackie!'));
+				$this->Session->setFlash(__('The casting has been saved. Yay Sylvia!'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The casting could not be saved. Please, try again.'));
@@ -86,6 +86,8 @@ class CastingsController extends AppController {
 		//sj - added this for the list of relatedimages
 		$relimg = $this->Casting->Relatedimage->find('list',array('conditions'=>array('Relatedimage.casting_id'=>$id)));
 		$this->set('relimg', implode(",",$relimg));
+		$this->set('edit',1);
+		$this->render('add','default');
 		
 	}
 
