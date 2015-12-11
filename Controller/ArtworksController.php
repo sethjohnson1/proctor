@@ -12,6 +12,14 @@ class ArtworksController extends AppController {
 		$this->set('artworks', $this->paginate());
 	}
 
+	public function front() {
+		$this->Prg->commonProcess();
+		$this->Artwork->recursive = 0;
+		$this->paginate = array('conditions' => $this->Artwork->parseCriteria($this->Prg->parsedParams()));
+		$this->set('artworks', $this->paginate());
+		$this->render('front','front_end');
+	}
+
 
 	public function view($id = null) {
 		//recursion to 2 so we can see Owner name in view. If lots of data this could cause performance issues (although I don't think it ever will)
@@ -35,13 +43,7 @@ class ArtworksController extends AppController {
 		}
 	}
 
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+
 	public function edit($id = null) {
 		if (!$this->Artwork->exists($id)) {
 			throw new NotFoundException(__('Invalid artwork'));
@@ -61,13 +63,7 @@ class ArtworksController extends AppController {
 		$this->render('add','default');
 	}
 
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
+
 	public function delete($id = null) {
 		$this->Artwork->id = $id;
 		if (!$this->Artwork->exists()) {
