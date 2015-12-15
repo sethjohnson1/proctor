@@ -25,7 +25,7 @@
 	$main_img=$this->Html->image('proctor_images/artworks/'.$img_file_name,array('alt'=>$artwork['Artwork']['name'],'class'=>'img-responsive'));
 
 	//echo $main_img;
-	echo $this->Html->link($main_img.$artwork['Artwork']['name'], array('action' => 'view', $artwork['Artwork']['id']),array('class'=>'sidebar-secondary','escape'=>false));
+	echo $this->Html->link($main_img.$artwork['Artwork']['name'], array('controller'=>'castings','action' => 'front', '?'=>array('artwork'=> $artwork['Artwork']['id'])),array('class'=>'sidebar-secondary','escape'=>false));
 
 	
 	?>

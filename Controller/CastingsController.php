@@ -25,8 +25,22 @@ class CastingsController extends AppController {
 	public function front() {
 		$this->Prg->commonProcess();
 		$this->Casting->recursive = 0;
+		
+		//check for querystring
+		$artwork=null;
+		if (isset($this->request->query['artwork'])){
+			$artwork=$this->Casting->Artwork->find('first',array('conditions'=>array('Artwork.id'=>$this->request->query['artwork']),'fields'=>array('Artwork.*'),'recursive'=>0));
+			/*****
+				also need to manipulate parsedParams to only include this one
+			***/
+		}
+		
 		$this->paginate = array('conditions' => $this->Casting->parseCriteria($this->Prg->parsedParams()));
-		$this->set('castings', $this->paginate());
+		$castings=$this->paginate();
+		$this->set(compact('castings', 'artwork'));
+		
+		
+
 		$this->render('front','front_end');
 	}
 
@@ -36,6 +50,15 @@ class CastingsController extends AppController {
 	
 	public function about() {
 		$this->render('about','front_end');
+	}
+	
+	public function frontview($id = null) {
+		if (!$this->Casting->exists($id)) {
+			throw new NotFoundException(__('Invalid casting'));
+		}
+		$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
+		$this->set('casting', $this->Casting->find('first', $options));
+		$this->render('frontview','front_end');
 	}
 	
 	public function add() {
