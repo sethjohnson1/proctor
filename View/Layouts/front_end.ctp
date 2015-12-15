@@ -39,7 +39,7 @@
 	if(!empty($TheTitle))	
 		echo '<title>'.$TheTitle.'</title>';
 	else 
-		echo '<title>Center of the West Online Collections</title>';
+		echo '<title>Proctor Online Catalog</title>';
 	
 //$TheDescription="hello";	
 	if(!empty($TheDescription))	
@@ -157,44 +157,26 @@ $(window).scroll(function() {
 });
 </script>
 <div id="mobilebuttons" class="row mnav">
-<!-- EXAMPLE OF JUSTIFIED, I don't know that I really like it -->
+
 <div class="col-xs-12">
 <div class="btn-group btn-group-justified" role="group">
 <div class="btn-group" role="group">
-<button type="button" class="orange btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span><span class="caret"></span></button>
+<button type="button" class="orange btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span><span class="caret"></span>
+Proctor Online Collection </button>
 <ul class="dropdown-menu mobile-drop" role="menu">
 <?=$this->element('default_menu')?>
-<li role="presentation" class="divider"></li>
-<?=$this->element('default_browse-menu')?>
+<?//=$this->element('default_browse-menu')?>
 </ul>
 </div>
-<!-- div class="btn-group" role="group">
-<button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-collapse-down"></span> Museums <span class="caret"></span></button>
-<ul class="dropdown-menu" role="menu">
 
-</ul>
-</div -->
-<?
-$ulink=$this->Html->link('<span class="glyphicon glyphicon-user"></span>','#login-modal',array('data-toggle'=>'modal','escape'=>false,'role'=>'button','class'=>'orange btn btn-lg btn-default '));
-if( $this->Session->read('Auth.User')) $ulink=$this->Html->link('<span style="color:'.$color['yellow'].' " class="glyphicon glyphicon-star"></span>',array('action'=>'mine','controller'=>'usergals','plugin'=>''),array('escape'=>false,'role'=>'button','class'=>'orange btn btn-lg btn-default'));
-?>
-<div class="btn-group" role="group"><?=$ulink?>
+
 </div>
 </div>
-</div>
-<!-- div class="col-xs-3">
-<div class="btn-group" role="group">
-<button type="button" class="orange btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu <span class="caret"></span></button>
-<ul class="dropdown-menu" role="menu">
-<?=$this->element('default_menu')?>
-<?=$this->element('default_browse-menu')?>
-</ul>
-</div>
-</div -->
+
 </div><!-- /mobile-menu row -->
 <aside class="sidebar-secondary hidden-xs hidden-sm" style="margin-top:10px;">
 
-<h1 class="OC-header"><?php echo $this->Html->link('Online Collections', array('plugin'=>'','controller' => 'treasures','action' => 'index')); ?></h1>
+<h1 class="OC-header"><?php echo $this->Html->link('[icon or text here]', '#'); ?></h1>
 
 
 <section id="nav_menu-7" class="widget widget_nav_menu">
@@ -208,7 +190,7 @@ if( $this->Session->read('Auth.User')) $ulink=$this->Html->link('<span style="co
 </ul>
 <ul class="browse-menu">
         
-<?=$this->element('default_browse-menu')?>
+<?//=$this->element('default_browse-menu')?>
     
 		
 </ul>

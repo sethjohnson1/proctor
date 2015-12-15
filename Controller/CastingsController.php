@@ -22,6 +22,22 @@ class CastingsController extends AppController {
 	}
 	*/
 
+	public function front() {
+		$this->Prg->commonProcess();
+		$this->Casting->recursive = 0;
+		$this->paginate = array('conditions' => $this->Casting->parseCriteria($this->Prg->parsedParams()));
+		$this->set('castings', $this->paginate());
+		$this->render('front','front_end');
+	}
+
+	public function essays() {
+		$this->render('essays','front_end');
+	}
+	
+	public function about() {
+		$this->render('about','front_end');
+	}
+	
 	public function add() {
 		if ($this->request->is('post')) {
 			//clean whitespace, build related images into proper format for automagic saving
