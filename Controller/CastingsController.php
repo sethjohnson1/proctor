@@ -33,14 +33,13 @@ class CastingsController extends AppController {
 			/*****
 				also need to manipulate parsedParams to only include this one
 			***/
+			//debug($this->Prg->parsedParams());
 		}
+		//debug($this->Prg->parsedParams());
 		
 		$this->paginate = array('conditions' => $this->Casting->parseCriteria($this->Prg->parsedParams()));
 		$castings=$this->paginate();
 		$this->set(compact('castings', 'artwork'));
-		
-		
-
 		$this->render('front','front_end');
 	}
 

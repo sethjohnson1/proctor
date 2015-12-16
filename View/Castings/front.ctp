@@ -58,4 +58,6 @@
  </div>
 </div><!-- //casting row -->
  <?endforeach;?>
+ 
+ <?=$this->element('paging')?>
 
