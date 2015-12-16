@@ -45,7 +45,7 @@
 
 <? foreach ($casting['Casting'] as $row=>$val){?>
 
- <?if ($row=='id'||$row=='provenance'||$row=='owner_id'){?>
+ <?if ($row=='id'||$row=='creditline'||$row=='foundrymark'){?>
  <tr><th scope="row"><?=$row?></th>
  <td><?=$val?></td></tr>
  <?}?>
