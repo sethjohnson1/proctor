@@ -97,6 +97,7 @@ class CastingsController extends AppController {
 			//clean whitespace, build related images into proper format for automagic saving
 			$relimg = preg_replace('/\s+/', '', $this->request->data['Relatedimage']['images']);
 			$relimg = explode(",",$relimg);
+
 			foreach ($relimg as $key=>$val){
 				$this->request->data['Relatedimage'][$key]['name']=$val;
 				$this->request->data['Relatedimage'][$key]['seq']=$key;
@@ -106,6 +107,8 @@ class CastingsController extends AppController {
 			//remove relatedimg associations, they will be rebuilt. The FLAW here is that if the save is not successful it still deleted relatedimage data. oh well for now
 			$this->Casting->Relatedimage->deleteAll(array('Relatedimage.casting_id'=>$id),false);
 			//$this->Casting->id = $id;
+			
+			//this still makes a BLANK relatedimage entry - but it really doesn't matter as it properly overwrites when an entry is made.. So there might be blanks in the DB but who cares?
 			if ($this->Casting->saveAssociated($this->request->data)) {
 				$this->Session->setFlash(__('The casting has been saved.'));
 				return $this->redirect(array('action' => 'index'));
