@@ -21,7 +21,7 @@ if ($( window ).width()>=$( window ).height()){
 
 });
 </script>
-<h2>[title area]</h2>
+<h2><?=$casting['Artwork']['name']?></h2>
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12">
 <?

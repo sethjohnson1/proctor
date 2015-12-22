@@ -110,28 +110,22 @@ $(function() {
 
 <header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="http://centerofthewest.org/" title="Buffalo Bill Center of the West" >Buffalo Bill Center of the West</a></p></div><aside class="widget-area header-widget-area"></aside>
 
-<nav class="nav-primary" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-8279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8279">
-
-<?=$this->Html->link('Home',array('controller'=>'artworks','action'=>'front'))?>
-
+<nav class="nav-primary" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-8279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8279"><a href="http://centerofthewest.org/visit/">Visit<small class="nav-desc"> </small></a>
+</li>
+<li id="menu-item-8282" class="split-nav-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8282"><a href="http://centerofthewest.org/explore/">Explore<small class="nav-desc"> </small></a>
 
 </li>
-<li id="menu-item-8282" class="split-nav-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8282">
-
-<?=$this->Html->link('Essays',array('controller'=>'castings','action'=>'essays'))?>
+<li id="menu-item-8283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8283"><a href="http://centerofthewest.org/learn/">Learn<small class="nav-desc"> </small></a>
 
 </li>
-<li id="menu-item-8283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8283">
-
-<?=$this->Html->link('Search All Castings',array('controller'=>'castings','action'=>'front'))?>
+<li id="menu-item-8200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8200"><a href="https://store.centerofthewest.org/">Shop</a>
 
 </li>
-<li id="menu-item-8200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8200">
-
-<?=$this->Html->link('About/Help',array('controller'=>'castings','action'=>'about'))?>
+<li id="menu-item-8289" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8289"><a href="http://centerofthewest.org/research/">Research<small class="nav-desc"> </small></a>
 
 </li>
-</ul></nav></div></header>
+<li id="menu-item-8291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8291"><a href="http://centerofthewest.org/get-involved/">Support<small class="nav-desc"> </small></a>
+</li></ul></nav></div></header>
 
 
 <div class="site-inner"><div class="wrap"><div class="content-sidebar-wrap"><main class="content" role="main" itemprop="mainContentOfPage"><article class="post-10546 page type-page status-draft entry" itemscope="itemscope" itemtype="http://schema.org/CreativeWork"><header class="entry-header">
@@ -183,10 +177,9 @@ Proctor Online Collection </button>
 </div>
 
 </div><!-- /mobile-menu row -->
-<?if ($this->request['action']!='front' && $this->request['controller']!='artworks'):?>
 <aside class="sidebar-secondary hidden-xs hidden-sm" style="margin-top:10px;">
 
-<h1 class="OC-header"><?php echo $this->Html->link('Proctor Online Collection', array('action'=>'front','controller'=>'artworks')); ?></h1>
+<h1 class="OC-header"><?php echo $this->Html->link('[icon or text here]', '#'); ?></h1>
 
 
 <section id="nav_menu-7" class="widget widget_nav_menu">
@@ -207,18 +200,7 @@ Proctor Online Collection </button>
   
   </div><!-- /mainmenu -->
   </div></section>
- </aside>
- 
- <?else:?>
- <style>
- .altsidebar-content .content {
-	width: 100%;
-	float: none;
- }
- </style>
- <?endif?>
- </div></div>  
-
+  </aside></div></div>  
   
   
 <div class="hidden-xs hidden-sm" style="margin-top:100px"></div>
@@ -234,8 +216,7 @@ Proctor Online Collection </button>
 				<li class="social-icon flickr"><a href="http://www.flickr.com/groups/buffalo_bill_historical_center/pool/">View our photos on flickr</a></li>
 			</ul>
 		</div>
-	</div> 
-
+	</div>
 <div class="footer-widgets hidden-sm hidden-xs">
 <div class="wrap"><div class="footer-widgets-1 widget-area"><section id="text-6" class="widget widget_text">
 <div class="widget-wrap"><h4 class="widget-title widgettitle">location</h4>
@@ -281,7 +262,7 @@ Cody, Wyoming 82414<br>
 
 </ul></div></div></section>
 </div></div></div>
-	
+
 
 <footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 

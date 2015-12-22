@@ -8,7 +8,7 @@
 <div class="row">
 <div class="col-xs-12 col-md-10">
 <?php
-		echo $this->Form->create('Casting', array('url' => array_merge(array('action' => 'front'), $this->params['pass'])));
+		echo $this->Form->create('Casting', array('url' => array_merge(array('action' => 'front','?'=>array('artwork'=>$this->request['query']['artwork'])), $this->params['pass'])));
         echo $this->Form->input('searchdata', array('div' => false,'empty'=>true,'label'=>false,'class'=>'form-control','placeholder'=>'Search castings'));
 ?>
 </div>
@@ -17,8 +17,17 @@
         echo $this->Form->submit(__('Search', true), array('div' => false,'class'=>'form-control'));
         echo $this->Form->end();
 ?>
+
 </div>
 </div><!-- //search row -->
+<div class="row">
+<div class="col-xs-12">
+<? 
+$cnt =$this->Number->format($this->Paginator->counter(array('format' => __('{:count}'))));
+echo $this->Paginator->counter(array('format' => __('Viewing records {:start} to {:end} out of '.$cnt)));
+?>
+</div>
+</div><!-- paging row -->
 
 <? foreach ($castings as $casting): ?>
 <div class="row" style="padding-top:15px">

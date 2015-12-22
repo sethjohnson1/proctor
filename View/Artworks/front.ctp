@@ -4,11 +4,13 @@
 	font-size: .95em;
 	text-transform: uppercase;
 }
+.artworks-row{
+	margin-left: 50px;
+}
 </style>
-<h3>[big image here if you want, not sure it needs it]</h3>
-<h1>Proctor Online Collection <small>check out Stalking Panther</small></h1>
+<h3>[full-width image here]</h3>
 
-<div class="row">
+<div class="row artworks-row">
 
 <? foreach ($artworks as $artwork): ?>
 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" style="padding-top:20px">
