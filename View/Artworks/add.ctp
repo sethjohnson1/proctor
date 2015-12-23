@@ -13,6 +13,8 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('alttitle',array('label'=>'Alternate Titles'));
+		echo $this->Form->input('essay_id_wp',array('label'=>'Wordpress Essay ID'));
+		echo $this->Form->input('checklist_id_wp',array('label'=>'Wordpress Checklist ID'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

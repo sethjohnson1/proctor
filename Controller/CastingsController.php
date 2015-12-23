@@ -41,7 +41,12 @@ class CastingsController extends AppController {
 		$this->render('front','front_end');
 	}
 
-	public function essays() {
+	public function essays($casting_id=null) {
+		if (isset($casting_id)){
+			$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
+			$this->set('casting', $this->Casting->find('first', $options));
+			$casting =$this->Casting->find('first', $options);
+		}
 		$this->render('essays','front_end');
 	}
 	
@@ -54,7 +59,19 @@ class CastingsController extends AppController {
 			throw new NotFoundException(__('Invalid casting'));
 		}
 		$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
-		$this->set('casting', $this->Casting->find('first', $options));
+		//$this->set('casting', $this->Casting->find('first', $options));
+		$casting =$this->Casting->find('first', $options);
+		
+		//make the left navigiation menu
+		
+		$left_nav_menu=array(
+			$casting['Artwork']['name'].' Essay'=>array('action'=>'essays','controller'=>'castings','?'=>array('essay'=>$casting['Artwork']['id'])),
+			'Castings'=>array('action'=>'front','controller'=>'castings','?'=>array('artwork'=>$casting['Artwork']['id'])),
+			'Checklist'=>array('action'=>'essays','controller'=>'castings','?'=>array('essay'=>$casting['Artwork']['id'])),
+		);
+		if ($casting['Casting']['xrf']) $left_nav_menu['XRF Report']='#';
+		$left_nav_menu['About/Help']=array('controller'=>'castings','action'=>'about');
+		$this->set(compact('casting','left_nav_menu'));
 		$this->render('frontview','front_end');
 	}
 	

@@ -39,9 +39,9 @@
 ?>
 
 <?php 
-	if(!empty($TheTitle))	
-		echo '<title>'.$TheTitle.'</title>';
-	else 
+	//if(!empty($TheTitle))	
+	//	echo '<title>'.$TheTitle.'</title>';
+	//else 
 		echo '<title>Proctor Online Catalog</title>';
 	
 //$TheDescription="hello";	
@@ -183,7 +183,7 @@ A.P. Proctor Selected Bronzes</button>
 </div>
 
 </div><!-- /mobile-menu row -->
-<?if ($this->request['action']!='front' && $this->request['controller']!='artworks'):?>
+<?if (isset($left_nav_menu)):?>
 <aside class="sidebar-secondary hidden-xs hidden-sm" style="margin-top:10px;">
 
 <h1 class="OC-header"><?php echo $this->Html->link('A.P. Proctor Selected Bronzes', array('action'=>'front','controller'=>'artworks')); ?></h1>

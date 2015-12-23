@@ -34,6 +34,7 @@ echo $this->Paginator->counter(array('format' => __('Viewing records {:start} to
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 	<?
 	//first extract the image based on naming parameters
+	//this BREAKS everything now for some dumb reason
 	$file_search=array();
 	$file_id=$casting['Casting']['id'];
 	$file_search=glob(WWW_ROOT.'/img/proctor_images/castings/'.$file_id.'_*.jpg');
@@ -41,10 +42,11 @@ echo $this->Paginator->counter(array('format' => __('Viewing records {:start} to
 		$file_path=explode('/',$file_search[0]);
 		$img_file_name= end($file_path);
 	}
-	$main_img=$this->Html->image('proctor_images/castings/'.$img_file_name,array('alt'=>$casting['Owner']['creditline'],'class'=>'img-responsive','style'=>'max-height:215px'));
+/*	
+$main_img=$this->Html->image('proctor_images/castings/'.$img_file_name,array('alt'=>$casting['Owner']['creditline'],'class'=>'img-responsive','style'=>'max-height:215px'));
 
 	//echo $main_img;
-	echo $this->Html->link($main_img, array('controller'=>'castings','action' => 'frontview',$casting['Casting']['id']),array('class'=>'casting-link','escape'=>false));
+	echo $this->Html->link($main_img, array('controller'=>'castings','action' => 'frontview',$casting['Casting']['id']),array('class'=>'casting-link','escape'=>false));*/	
 	?>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
