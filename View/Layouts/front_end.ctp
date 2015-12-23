@@ -171,7 +171,7 @@ $(window).scroll(function() {
 <div class="btn-group btn-group-justified" role="group">
 <div class="btn-group" role="group">
 <button type="button" class="orange btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span><span class="caret"></span>
-Proctor Online Collection </button>
+A.P. Proctor Selected Bronzes</button>
 <ul class="dropdown-menu mobile-drop" role="menu">
 <?=$this->element('default_menu')?>
 <?//=$this->element('default_browse-menu')?>
@@ -186,7 +186,7 @@ Proctor Online Collection </button>
 <?if ($this->request['action']!='front' && $this->request['controller']!='artworks'):?>
 <aside class="sidebar-secondary hidden-xs hidden-sm" style="margin-top:10px;">
 
-<h1 class="OC-header"><?php echo $this->Html->link('Proctor Online Collection', array('action'=>'front','controller'=>'artworks')); ?></h1>
+<h1 class="OC-header"><?php echo $this->Html->link('A.P. Proctor Selected Bronzes', array('action'=>'front','controller'=>'artworks')); ?></h1>
 
 
 <section id="nav_menu-7" class="widget widget_nav_menu">
