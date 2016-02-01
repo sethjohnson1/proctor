@@ -5,6 +5,7 @@
 <h1>Proctor Collection Online <small>Castings</small></h1>
 <?endif?>
 
+<?if (!isset($this->request->query['artwork'])):?>
 <div class="row">
 <div class="col-xs-12 col-md-10">
 <?php
@@ -20,6 +21,7 @@
 
 </div>
 </div><!-- //search row -->
+<?endif?>
 <div class="row">
 <div class="col-xs-12">
 <? 

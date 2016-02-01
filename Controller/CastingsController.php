@@ -31,23 +31,21 @@ class CastingsController extends AppController {
 	public function front() {
 		$this->Prg->commonProcess();
 		$this->Casting->recursive = 0;
-		$search = $this->Casting->parseCriteria($this->Prg->parsedParams());
-		//check for querystring
+		$search = $this->Casting->parseCriteria($this->Prg->parsedParams());	
 		$artwork=null;
 		if (isset($this->request->query['artwork'])){
 			$artwork=$this->Casting->Artwork->find('first',array('conditions'=>array('Artwork.id'=>$this->request->query['artwork']),'fields'=>array('Artwork.*'),'recursive'=>0));
 
 			$tquery['Casting.artwork_id'] =$this->request->query['artwork'];
 			$search = array_merge($search,$tquery);
-			//debug($search);
+			
 		}
 		
 		$this->paginate = array('conditions' => $search);
 		$castings=$this->paginate();
-		//debug($castings);
-		
 		$casting=$castings[0];
-		$left_nav_menu=$this->Leftnav->casting_left_nav($casting);
+		if (isset($this->request->query['artwork'])) $left_nav_menu=$this->Leftnav->casting_left_nav($casting);
+		else $left_nav_menu=$this->Leftnav->casting_global_left_nav();
 		$this->set(compact('castings', 'artwork','left_nav_menu'));
 		$this->render('front','front_end');
 	}
