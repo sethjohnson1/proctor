@@ -3,8 +3,14 @@ App::uses('AppController', 'Controller');
 
 class CastingsController extends AppController {
 
-	public $components = array('Paginator','Search.Prg');
+	public $components = array('Paginator','Search.Prg','Leftnav');
 	public $scaffold;
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+
+	}
+	
 	public function index() {
 		$this->Prg->commonProcess();
 		$this->Casting->recursive = 0;
@@ -33,19 +39,25 @@ class CastingsController extends AppController {
 
 			$tquery['Casting.artwork_id'] =$this->request->query['artwork'];
 			$search = array_merge($search,$tquery);
+			//debug($search);
 		}
 		
 		$this->paginate = array('conditions' => $search);
 		$castings=$this->paginate();
-		$this->set(compact('castings', 'artwork'));
+		//debug($castings);
+		
+		$casting=$castings[0];
+		$left_nav_menu=$this->Leftnav->casting_left_nav($casting);
+		$this->set(compact('castings', 'artwork','left_nav_menu'));
 		$this->render('front','front_end');
 	}
 
-	public function essays($casting_id=null) {
-		if (isset($casting_id)){
-			$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
-			$this->set('casting', $this->Casting->find('first', $options));
+	public function essays() {
+		if (isset($this->request->query['artwork'])){
+			$options = array('conditions' => array('Casting.artwork_id'=>$this->request->query['artwork']));
 			$casting =$this->Casting->find('first', $options);
+			$left_nav_menu=$this->Leftnav->casting_left_nav($casting);
+			$this->set(compact('casting','left_nav_menu'));
 		}
 		$this->render('essays','front_end');
 	}
@@ -63,14 +75,7 @@ class CastingsController extends AppController {
 		$casting =$this->Casting->find('first', $options);
 		
 		//make the left navigiation menu
-		
-		$left_nav_menu=array(
-			$casting['Artwork']['name'].' Essay'=>array('action'=>'essays','controller'=>'castings','?'=>array('essay'=>$casting['Artwork']['id'])),
-			'Castings'=>array('action'=>'front','controller'=>'castings','?'=>array('artwork'=>$casting['Artwork']['id'])),
-			'Checklist'=>array('action'=>'essays','controller'=>'castings','?'=>array('essay'=>$casting['Artwork']['id'])),
-		);
-		if ($casting['Casting']['xrf']) $left_nav_menu['XRF Report']='#';
-		$left_nav_menu['About/Help']=array('controller'=>'castings','action'=>'about');
+		$left_nav_menu=$this->Leftnav->casting_left_nav($casting);
 		$this->set(compact('casting','left_nav_menu'));
 		$this->render('frontview','front_end');
 	}

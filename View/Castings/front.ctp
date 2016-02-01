@@ -34,14 +34,18 @@ echo $this->Paginator->counter(array('format' => __('Viewing records {:start} to
 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 	<?
 	//first extract the image based on naming parameters
-	//this BREAKS everything now for some dumb reason - no just my enviro, which had other problems
+	//this will make ERROR 500 if $img_file_name is empty when called below, so this should be the "no image available" one
+	$img_file_name='NONE.jpg';
 	$file_search=array();
 	$file_id=$casting['Casting']['id'];
 	$file_search=glob(WWW_ROOT.'/img/proctor_images/castings/'.$file_id.'_*.jpg');
+//	debug(WWW_ROOT.'img/proctor_images/castings/'.$file_id.'_*.jpg');
+//	debug($file_search);
 	if (isset($file_search[0])){
 		$file_path=explode('/',$file_search[0]);
 		$img_file_name= end($file_path);
 	}
+	//debug($img_file_name);
 
 $main_img=$this->Html->image('proctor_images/castings/'.$img_file_name,array('alt'=>$casting['Owner']['creditline'],'class'=>'img-responsive','style'=>'max-height:215px'));
 

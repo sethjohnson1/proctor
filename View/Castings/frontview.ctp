@@ -27,6 +27,7 @@ if ($( window ).width()>=$( window ).height()){
 <?
 
 	//first extract the image based on naming parameters
+	$img_file_name='NONE.jpg';
 	$file_search=array();
 	$file_id=$casting['Casting']['id'];
 	$file_search=glob(WWW_ROOT.'/img/proctor_images/castings/'.$file_id.'_*.jpg');
