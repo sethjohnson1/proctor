@@ -112,15 +112,15 @@ $(function() {
 
 <nav class="nav-primary" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary"><li id="menu-item-8279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8279">
 
-<?=$this->Html->link('Home',array('controller'=>'artworks','action'=>'front'))?>
+<?=$this->Html->link('A.P. Proctor Bronzes',array('controller'=>'artworks','action'=>'front'))?>
 
 
 </li>
-<li id="menu-item-8282" class="split-nav-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8282">
+<!-- li id="menu-item-8282" class="split-nav-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8282">
 
 <?=$this->Html->link('Essays',array('controller'=>'castings','action'=>'essays'))?>
 
-</li>
+</li -->
 <li id="menu-item-8283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8283">
 
 <?=$this->Html->link('Search All Castings',array('controller'=>'castings','action'=>'front'))?>

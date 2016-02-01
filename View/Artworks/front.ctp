@@ -13,7 +13,7 @@
 <div class="row artworks-row">
 
 <? foreach ($artworks as $artwork): ?>
-<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3" style="padding-top:20px">
+<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" style="padding-top:20px">
 <div class="sidebar-secondary artwork-link">
 	<?
 	//first extract the image based on naming parameters
@@ -27,7 +27,7 @@
 	$main_img=$this->Html->image('proctor_images/artworks/'.$img_file_name,array('alt'=>$artwork['Artwork']['name'],'class'=>'img-responsive'));
 
 	//echo $main_img;
-	echo $this->Html->link($main_img.$artwork['Artwork']['name'], array('controller'=>'castings','action' => 'essays', '?'=>array('artwork'=> $artwork['Artwork']['id'])),array('class'=>'sidebar-secondary','escape'=>false));
+	echo $this->Html->link($main_img.$artwork['Artwork']['name'], array('controller'=>'castings','action' => 'essays', '?'=>array('artwork'=> $artwork['Artwork']['id'])),array('class'=>'','escape'=>false));
 
 	
 	?>

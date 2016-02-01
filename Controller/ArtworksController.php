@@ -50,8 +50,9 @@ class ArtworksController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Artwork->save($this->request->data)) {
+					debug($this->request->data);
 				$this->Session->setFlash(__('The artwork has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				//return $this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The artwork could not be saved. Please, try again.'));
 			}
