@@ -22,7 +22,12 @@
 </div>
 <div class="col-xs-12 col-md-6">
 <p>
-ESSAY begins here
+<?
+
+//2453 is Proctor page for example only
+echo $this->Wordpress->get_WP(2453)['content'];
+
+?>
 </p>
 </div>
 </div><!-- /row -->

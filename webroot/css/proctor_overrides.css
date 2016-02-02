@@ -9,3 +9,6 @@
 .artwork-link{
 	width: auto !important;
 }
+
+.grow-proc { transition: all .2s ease-in-out; width: 90%;}
+.grow-proc:hover { transform: scale(1.06); z-index:0 }

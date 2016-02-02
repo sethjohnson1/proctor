@@ -14,7 +14,7 @@
 
 <? foreach ($artworks as $artwork): ?>
 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" style="padding-top:20px">
-<div class="sidebar-secondary artwork-link">
+<div class="sidebar-secondary artwork-link grow-proc">
 	<?
 	//first extract the image based on naming parameters
 	$file_search=array();

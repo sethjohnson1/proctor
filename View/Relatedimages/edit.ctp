@@ -7,6 +7,7 @@
 		echo $this->Form->input('casting_id');
 		echo $this->Form->input('plaster_id');
 		echo $this->Form->input('name');
+		echo $this->Form->input('caption');
 		echo $this->Form->input('seq');
 	?>
 	</fieldset>
