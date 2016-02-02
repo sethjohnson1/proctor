@@ -15,7 +15,7 @@
 
 <div class="row header-row">
 <div class="col-xs-12">
-<?=$this->Html->image('Panther_banner',array('class'=>'img-responsive'));?>
+<?=$this->Html->image('Panther_banner.jpg',array('class'=>'img-responsive'));?>
 </div>
 </div>
 <div class="row artworks-row">
