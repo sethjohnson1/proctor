@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class CastingsController extends AppController {
 
 	public $components = array('Paginator','Search.Prg','Leftnav');
-	public $scaffold;
+	//public $scaffold;
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -18,7 +18,6 @@ class CastingsController extends AppController {
 		$this->set('castings', $this->paginate());
 	}
 
-	/* disabled so that scaffold takes care of it
 	public function view($id = null) {
 		if (!$this->Casting->exists($id)) {
 			throw new NotFoundException(__('Invalid casting'));
@@ -26,7 +25,7 @@ class CastingsController extends AppController {
 		$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
 		$this->set('casting', $this->Casting->find('first', $options));
 	}
-	*/
+	
 
 	public function front() {
 		$this->Prg->commonProcess();

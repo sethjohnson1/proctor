@@ -7,11 +7,19 @@
 .artworks-row{
 	margin-left: 50px;
 }
+
+.header-row{
+	margin: 0 -46px 0 -46px;
+}
 </style>
-<h3>[full-width image here]</h3>
 
+<div class="row header-row">
+<div class="col-xs-12">
+<?=$this->Html->image('Panther_banner',array('class'=>'img-responsive'));?>
+</div>
+</div>
 <div class="row artworks-row">
-
+<h3>[full-width image will say something]</h3>
 <? foreach ($artworks as $artwork): ?>
 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3" style="padding-top:20px">
 <div class="sidebar-secondary artwork-link grow-proc">
