@@ -116,7 +116,7 @@ sj - modified these from WordPress CSS to always center
 <?
 
 //2453 is Proctor page for example only
-echo $this->Wordpress->get_WP(2453)['content'];
+echo $this->Wordpress->get_WP(31019)['content'];
 
 ?>
 </p>
