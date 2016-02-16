@@ -23,17 +23,18 @@
 </div>
 
 <div class="row artworks-row">
+<div class="col-xs-12">
 <? 
-$c=0;
+$c=4;
 //add Proctor to end of array
 $proc['Artwork']=array('id'=>0,'name'=>'A.P. Proctor','essay_id_wp'=>123);
 array_push($artworks,$proc);
 
 foreach ($artworks as $artwork): 
-$c++;
+//debug($c);
 if ($c==4) echo '<div class="row">';
 ?>
-<div class="col-xs-3" style="padding-top:20px">
+<div class="col-xs-6 col-sm-3" style="padding-top:20px">
 <div class="sidebar-secondary artwork-link grow-proc">
 	<?
 	//first extract the image based on naming parameters
@@ -52,10 +53,13 @@ if ($c==4) echo '<div class="row">';
 	
 	?>
 </div>
+
 </div><!-- artwork row -->
 
 <? 
-if ($c==4){ echo '</div>'; $c=0;}
+if ($c==1){ echo '</div>'; $c=4;}
+else  $c=$c-1;
+//$c++;
 endforeach; ?>
-
+</div>
 </div><!-- /artworks row -->
