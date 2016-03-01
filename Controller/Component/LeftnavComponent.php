@@ -18,6 +18,7 @@ class LeftnavComponent extends Component {
 	public function casting_global_left_nav() {
 	
 		$left_nav_menu=array(
+		'Home'=>array('controller'=>'artworks','action'=>'front'),
 		'A.P. Proctor Essay'=>array('action'=>'essays','controller'=>'castings','?'=>array('artwork'=>'proctor')),
 		'All Castings'=>array('action'=>'front','controller'=>'castings')
 		);

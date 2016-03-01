@@ -183,7 +183,9 @@ A.P. Proctor Selected Bronzes</button>
 </div>
 
 </div><!-- /mobile-menu row -->
-<?if (isset($left_nav_menu)):?>
+<?if (isset($left_nav_menu) && !isset($hide_left_nav)):
+
+?>
 <aside class="sidebar-secondary hidden-xs hidden-sm" style="margin-top:10px;">
 
 <h1 class="OC-header"><?php echo $this->Html->link('A.P. Proctor Selected Bronzes', array('action'=>'front','controller'=>'artworks')); ?></h1>
