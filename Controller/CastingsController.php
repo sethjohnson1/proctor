@@ -40,7 +40,7 @@ class CastingsController extends AppController {
 			
 		}
 		
-		$this->paginate = array('conditions' => $search);
+		$this->paginate = array('conditions' => $search,'limit'=>100);
 		$castings=$this->paginate();
 		$casting=$castings[0];
 		if (isset($this->request->query['artwork'])) $left_nav_menu=$this->Leftnav->casting_left_nav($casting);
