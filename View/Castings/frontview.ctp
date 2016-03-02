@@ -37,7 +37,7 @@ if ($( window ).width()>=$( window ).height()){
 	}
 	$main_img=$this->Html->image('proctor_images/castings/'.$img_file_name,array('alt'=>$casting['Owner']['creditline'],'class'=>'img-responsive'));
 
-	echo $this->Html->link($main_img.'Click to enlarge', Configure::read('globalSiteURL').'/img/proctor_images/castings/'.$img_file_name,array('class'=>'ajax cboxElement','escape'=>false));
+	echo $this->Html->link($main_img.'Click to enlarge', Configure::read('globalSiteURL').'/img/proctor_images/castings/'.$img_file_name,array('class'=>'ajax cboxElement','escape'=>false,'style'=>'padding: 7px'));
 
 ?>
 </div>
