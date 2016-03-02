@@ -115,8 +115,8 @@ sj - modified these from WordPress CSS to always center
 <p>
 <?
 
-//2453 is Proctor page for example only
-echo $this->Wordpress->get_WP(31019)['content'];
+//debug($casting);
+echo $this->Wordpress->get_WP($casting['Artwork']['essay_id_wp'])['content'];
 
 ?>
 </p>
