@@ -107,7 +107,7 @@ sj - modified these from WordPress CSS to always center
 <div class="row">
 <div class="col-xs-12">
 <?//debug($this->Wordpress->get_WP(2453))?>
-<h2><?=$casting['Artwork']['name']?></h2>
+<!-- TITLE IS IN IMG h2><?=$casting['Artwork']['name']?></h2 -->
 <?=$main_img?>
 </div>
 
