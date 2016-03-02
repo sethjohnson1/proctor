@@ -21,6 +21,11 @@ if ($( window ).width()>=$( window ).height()){
 
 });
 </script>
+<style>
+.quickfix{
+	padding:10px;
+}
+</style>
 <h2><?=$casting['Artwork']['name']?></h2>
 <div class="row">
 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -80,7 +85,7 @@ if (empty($casting['Relatedimage'][0]['name']) && empty($casting['Casting']['xrf
 
 <?foreach ($casting['Relatedimage'] as $img):
 
-	$related_img=$this->Html->image('proctor_images/castings/'.$img['name'].'.jpg',array('alt'=>$casting['Artwork']['name'],'class'=>'img-responsive'));
+	$related_img=$this->Html->image('proctor_images/castings/'.$img['name'].'.jpg',array('alt'=>$casting['Artwork']['name'],'class'=>'img-responsive quickfix'));
 
 	echo $this->Html->link($related_img.'', Configure::read('globalSiteURL').'/img/proctor_images/castings/'.$img['name'].'.jpg',array('class'=>'ajax cboxElement','escape'=>false));
 	//debug($img);
