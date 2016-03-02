@@ -3,7 +3,7 @@ App::uses('AppController', 'Controller');
 
 class ArtworksController extends AppController {
 
-	public $components = array('Paginator','Search.Prg');
+	public $components = array('Paginator','Search.Prg','Leftnav');
 
 	public function index() {
 		$this->Prg->commonProcess();
@@ -16,7 +16,11 @@ class ArtworksController extends AppController {
 		$this->Prg->commonProcess();
 		$this->Artwork->recursive = 0;
 		$this->paginate = array('conditions' => $this->Artwork->parseCriteria($this->Prg->parsedParams()));
-		$this->set('artworks', $this->paginate());
+		$artworks=$this->paginate();
+		$left_nav_menu=$this->Leftnav->casting_global_left_nav();
+		//use this flag so only the mobile menu is displayed
+		$hide_left_nav=1;
+		$this->set(compact('artworks', 'left_nav_menu','hide_left_nav'));
 		$this->render('front','front_end');
 	}
 
