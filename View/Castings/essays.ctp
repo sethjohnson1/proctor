@@ -1,7 +1,7 @@
  <style type="text/css" scoped>
    div[id^="attachment_"]{
 		max-width: 50%;
-		margin: auto;
+		//margin: auto;
 	}
 
 	/* =WordPress Core
@@ -62,15 +62,17 @@ a img.aligncenter {
 .wp-caption.alignnone {
     margin: 5px 20px 20px 0;
 }
-/*
-sj - modified these from WordPress CSS to always center
-*/
+
 .wp-caption.alignleft {
-    margin: 0 auto;
+   // margin: 0 auto;
+   float: left;
+   padding-right: 5px;
 }
 
 .wp-caption.alignright {
-    margin: 0 auto;
+  //  margin: 0 auto;
+  float: right;
+  padding-left:5px;
 }
 
 /* sj modified this for images to be responsive */
@@ -85,6 +87,24 @@ sj - modified these from WordPress CSS to always center
 .wp-caption p.wp-caption-text {
 	font-style: italic;
 	margin-bottom: 1em;
+}
+p{
+	text-indent:1.4em;
+}
+/* these don't work, they capitalize the caption text as well...*/
+p.dropcap:nth-child(2):first-letter {
+    float: left;
+	font-size: 1.6em;
+	line-height: 18px;
+	padding: 0px 8px 0px 3px;
+	font-weight: bold;
+}
+p.dropcap:nth-child(2){
+	text-indent:-.3em;
+}
+
+p.dropcap{
+	text-align:justify;
 }
 
 	
@@ -106,19 +126,20 @@ sj - modified these from WordPress CSS to always center
 ?>
 <div class="row">
 <div class="col-xs-12">
-<?//debug($this->Wordpress->get_WP(2453))?>
+
 <!-- TITLE IS IN IMG h2><?=$casting['Artwork']['name']?></h2 -->
 <?=$main_img?>
 </div>
-
 <div class="col-xs-12">
-<p>
-<?
 
-//debug($casting);
-echo $this->Wordpress->get_WP($casting['Artwork']['essay_id_wp'])['content'];
+<?=$this->Wordpress->get_WP($casting['Artwork']['essay_id_wp'])['content']?>
 
-?>
-</p>
 </div>
 </div><!-- /row -->
+
+<script>
+//add class to paragraphs that are not captions so the nth-child(2) CSS works
+$(document).ready(function(){
+$("p").not(".wp-caption-text").addClass("dropcap");
+});
+</script>
