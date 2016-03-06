@@ -70,7 +70,7 @@ class CastingsController extends AppController {
 		$options = array('conditions' => array('Casting.' . $this->Casting->primaryKey => $id));
 		//$this->set('casting', $this->Casting->find('first', $options));
 		$casting =$this->Casting->find('first', $options);
-		
+
 		//make the left navigiation menu
 		$left_nav_menu=$this->Leftnav->casting_left_nav($casting);
 		$this->set(compact('casting','left_nav_menu'));

@@ -31,7 +31,7 @@
 		echo $this->Form->input('plaster_id');
 		echo $this->Form->input('commentary');
 		echo $this->Form->input('metallurgy');
-		echo $this->Form->input('xrf');
+		//echo $this->Form->input('xrf');
 		echo $this->Form->input('patina');
 		echo $this->Form->input('Relatedimage.images',array('value'=>$relimg,'label'=>'Related Images'));
 		echo $this->Form->input('signatures');
