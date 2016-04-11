@@ -98,6 +98,7 @@ p.dropcap:nth-child(2):first-letter {
 	line-height: 18px;
 	padding: 0px 8px 0px 3px;
 	font-weight: bold;
+	color:#6e3219;
 }
 p.dropcap:nth-child(2){
 	text-indent:-.3em;
