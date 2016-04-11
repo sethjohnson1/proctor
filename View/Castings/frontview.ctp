@@ -65,7 +65,7 @@ if (!empty($casting['Forge']['name'])) $top_section['Foundry']=$casting['Forge']
 if (!empty($cast['castdate'])) $top_section['Casting Date']=$cast['castdate'];
 
 if (!empty($cast['version'])) $detailed_info['Version']=$cast['version'];
-if (!empty($cast['dimensions'])) $detailed_info['Dimensions']=$cast['dimensions'];
+if (!empty($cast['dimensions'])) $detailed_info['Dimensions<br/><small>(Height x Width x Length)</small>']=$cast['dimensions'];
 if (!empty($cast['provenance'])) $detailed_info['Provenance']=$cast['provenance'];
 if (!empty($cast['foundrymark'])) $detailed_info['Foundry Mark']=$cast['foundrymark'];
 if (!empty($cast['inscription'])) $detailed_info['Inscriptions']=$cast['inscription'];
@@ -74,6 +74,7 @@ if (!empty($cast['copyright'])) $detailed_info['Copyright Date']=$cast['copyrigh
 //plasters TBD, but they would be here
 if (!empty($cast['accnum'])) $detailed_info['Accession Number']=$cast['accnum'];
 if (!empty($cast['micromeasurements'])) $detailed_info['Micro measurements']=$cast['micromeasurements'];
+if (!empty($cast['commentary'])) $detailed_info['Commentary']=$cast['commentary'];
 if (!empty($cast['modified'])) $detailed_info['Record modified']=date('Y-m-d',strtotime($cast['modified']));
 ?>
 <table class="table table-striped">

@@ -66,13 +66,13 @@ a img.aligncenter {
 .wp-caption.alignleft {
    // margin: 0 auto;
    float: left;
-   padding-right: 5px;
+   margin-right: 20px;
 }
 
 .wp-caption.alignright {
   //  margin: 0 auto;
   float: right;
-  padding-left:5px;
+  margin-left:20px;
 }
 
 /* sj modified this for images to be responsive */
@@ -104,7 +104,7 @@ p.dropcap:nth-child(2){
 }
 
 p.dropcap{
-	text-align:justify;
+	text-align:left;
 }
 
 	
