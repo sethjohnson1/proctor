@@ -5,7 +5,7 @@
 App::uses('AppHelper', 'View/Helper');
 class WordpressHelper extends AppHelper {
 	public function get_WP($postid) {
-		$url = 'http://centerofthewest.org/wp-json/posts/'.$postid.'/';//this is our URL that the API is at.
+		$url = 'https://centerofthewest.org/wp-json/posts/'.$postid.'/';//this is our URL that the API is at.
 
 		$ch = curl_init();
 		$timeout = 5;
